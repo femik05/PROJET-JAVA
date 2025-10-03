@@ -1,9 +1,13 @@
-import java.io.*;
-import java.net.*;
-import java.util.concurrent.ConcurrentHashMap;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.net.URLEncoder;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import org.json.*;
+import java.util.concurrent.ConcurrentHashMap;
+
+import org.json.JSONObject;
 
 public class WeatherService {
     private static final String API_KEY = "481060c154e32447b23869d8c6e863f8"; // ⚠️ REMPLACEZ par votre clé !
@@ -92,7 +96,6 @@ public class WeatherService {
         result.append(String.format("🌡  Température: %.1f°C (ressenti %.1f°C)\n", temperature, feelsLike));
         result.append(String.format("☁️  Conditions: %s\n", capitalizeFirst(description)));
 
-Əmmvnuel👾, [03/10/2025 09:43]
 result.append(String.format("💧 Humidité: %d%%\n", humidity));
         result.append(String.format("🌬  Vent: %.1f m/s\n", windSpeed));
         result.append(String.format("🔽 Pression: %.0f hPa\n", pressure));
